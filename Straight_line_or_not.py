@@ -1,66 +1,31 @@
-# Definition for a binary tree node.
-class TreeNode:
-     def __init__(self, val, left=None, right=None):
-         self.val = val
-         self.left = left
-         self.right = right
-         
+#Check If It Is a Straight Line
 
-def level(root,val,lev):
-    if root is None : 
-        return 0 
-    if root.val == val:
-        return lev
-    
-    l = level(root.left, val, lev+1) 
-    if l != 0: 
-        return l 
-    return level(root.right,val,lev + 1)
-    
-def sibling(root,x,y):
-    if root is None:
-        return 0
-    
-    return ((root.left.val == x and root.right.val == y) or (root.left.val == x and root.right.val == y) or sibling(root.left,x,y) or sibling(root.right,x,y) )
-    
-    
-def isCousins(root, x, y) :
-    if level(root,x,1) == level(root, y, 1) and  sibling(root,x,y) == True :
-            print("Yes")
-    else:
-        print("No")
+def straight_line(coordinates):
+        val1 = coordinates[0][0]
+        val2 = coordinates[0][1]
+        flag1,flag2 = True,True
+        for i in range(1,len(coordinates)):
+            if coordinates[i][0] != val1:
+                    flag1 = False
+            if coordinates[i][1] != val2:
+                    flag2 = False
+        if flag1 == True or flag2 == True:
+            return True
+        flag = True
+        val = []
+        coordinates.sort(key = lambda x: x[1]) 
+        try: 
+            for i in range(1,len(coordinates)-1):
+                    a =(coordinates[i][1]-coordinates[i-1][1])/(coordinates[i][0]-coordinates[i-1][0])
+                    b = (coordinates[i+1][0]-coordinates[i-1][0])/(coordinates[i+1][1]-coordinates[i-1][1])
+                    val.append(a/b)
+            flag = val.count(val[0]) == len(val)   
+            return flag
+        except:
+            return False
 
 
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.left.left = TreeNode(3)
-root.left.right = TreeNode(4)
-val = isCousins(root,3,4)
+coordinates =  [[0,1],[1,3],[-4,-7],[5,11]]
+val = straight_line(coordinates)
+print(val)     
 
-print("Val is ",val)
-
-def isSibling(root, a , b): 
-  
-    # Base Case 
-    if root is None: 
-        return 0
-  
-    return ((root.left == a and root.right ==b) or 
-            (root.left == b and root.right == a)or
-            isSibling(root.left, a, b) or
-            isSibling(root.right, a, b)) 
-    
-    
- def isSibling(root,x,y):
-        if root is None:
-            return 0
-
-        return ((root.left.val == x and root.right.val == y) or 
-                (root.left.val == x and root.right.val == y) or  
-                isSibling(root.left,x,y) or
-                isSibling(root.right,x,y) )
-       
-    
-    
-    
-    

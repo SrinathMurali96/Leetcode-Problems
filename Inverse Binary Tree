@@ -1,0 +1,15 @@
+def inverse_binary_tree(root):
+    if root is None:
+        return None
+    
+    inverse_binary_tree(root.left)
+    inverse_binary_tree(root.right)
+    
+    temp = root.left
+    root.left = root.right
+    root.right = temp
+    
+def inorder_print(root):
+    inorder_print(root.left)
+    print(root.data)
+    inorder_print(root.right)

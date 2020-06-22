@@ -1,0 +1,11 @@
+def rec(val,l,n):
+    if len(val) == n:
+        print(val)
+    for i in l:
+        lis = list(l)
+        value = val + i
+        lis.remove(i)
+        rec(value,lis,n)
+        
+        
+rec('',['A','B','C','D'],4)

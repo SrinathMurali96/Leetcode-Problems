@@ -1,0 +1,22 @@
+We use two pointer - slow and fast ptr.
+Slow moves one step at a time and fast moves two times at a time.
+We check if two elements exist (fast and fast.next) in while loop.
+
+Eg: 1->2->3->4->5->6
+Output : 4->5->6 
+
+def mid(head):
+    slow = fast = head
+    while fast and fast.next:
+          slow = slow.next
+          fast = fats.next.next
+    return slow
+
+If you want 3->4->5->6 as output , then 
+
+while fast and fast.next:
+    fast = fast.next.next
+    if fast:
+        slow = slow.next
+return slow
+            

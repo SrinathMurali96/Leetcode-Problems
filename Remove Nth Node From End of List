@@ -1,0 +1,16 @@
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        temp = head
+        count = 0
+        while temp:
+            count = count + 1
+            temp = temp.next
+        pos = count - n 
+        dummy = ListNode(0)
+        dummy.next = head
+        temp1 = dummy
+        while pos:
+            temp1 = temp1.next
+            pos-=1
+        temp1.next = temp1.next.next
+        return dummy.next

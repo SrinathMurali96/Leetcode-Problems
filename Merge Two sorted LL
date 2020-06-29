@@ -1,0 +1,29 @@
+We use dummy to assign initial node which is returned as starting node. 
+we assign dummy = new_node, which can be further used to add elements in a list
+
+class Solution:
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
+        dummy = None
+        while l1 and l2:
+            if l1.val > l2.val:
+                node = l2
+                l2 = l2.next
+            else:
+                node = l1
+                l1 = l1.next
+            if dummy is None:
+                dummy = node
+                new_node = dummy
+            else:
+                new_node.next = node
+                new_node = new_node.next
+        if l1:
+            new_node.next = l1
+            
+        if l2:
+            new_node.next = l2
+        return dummy

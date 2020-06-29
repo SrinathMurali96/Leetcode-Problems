@@ -1,4 +1,7 @@
-1. Clone a LL
-2. Detect loop in LL
-3. Merge point in LL
-4. Swap nodes in Pair
+1. Reverse a LL
+2. Detect loop in LL - - Use slow and fast ptr , at a point slow == fast
+3. Merge point in LL - use an extra list
+4. Swap nodes in Pair - Use first and second ptr , recursion
+5. Middle element of LL - Use slow and fast ptr
+6. Clone a LL - use extra dict, if present return visited[head] , helper(next), helper(random) 
+7. Delete a node in LL (Both from first and last)

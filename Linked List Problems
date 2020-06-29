@@ -7,6 +7,6 @@
 7. Delete a node in LL (Both from first and last)
 8. Nth node from last (In single traversal)
 9. Merge two sorted linked list
+10. Palindrome or not - Use first and sec ptr, add elements upto middle in stack, then check equality
 
-
- Remove Linked List Elements (Specific Value)
+17. Remove Linked List Elements (Specific Value)

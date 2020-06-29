@@ -1,0 +1,11 @@
+Nth node from last in LL in single traversal
+
+We use two pointer - first_ptr and second_ptr
+We move the first_ptr till n position.
+Then, we will traverse nodes using both pointers where 
+first_ptr from nth node and 
+second_ptr from head. 
+We traverse till first_ptr is None. So, the second_ptr will land in nth node from last
+
+
+def nth_last(

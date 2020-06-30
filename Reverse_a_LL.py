@@ -15,16 +15,18 @@ class LL():
             temp = temp.next
         
     def reverselist(self):
-        reversed_node = self.head
-        list_to_do = self.head.next
+        reversed_node = head
+        list_to_reverse = reversed_node.next
         reversed_node.next = None
-        temp = None
-        while list_to_do!= None:
-            temp = list_to_do 
-            list_to_do = list_to_do.next
-            temp.next = reversed_node
-            reversed_node = temp
-        self.head = temp
+    
+        while list_to_reverse:
+            temp = reversed_node
+            reversed_node = list_to_reverse
+            list_to_reverse = list_to_reverse.next
+            reversed_node.next = temp
+        head = reversed_node
+        return head    
+    
                 
 l = LL()
 l.head = Node(1)

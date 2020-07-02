@@ -1,0 +1,21 @@
+def top_view(root):
+    if root is None:
+        return root
+    queue = [root]
+    root.hd = 0           //node_val[root] = 0
+    m = dict()
+    while queue:
+      element = queue.pop(0)
+      hd = element.hd    // or use a dict   node_val[element]
+      if hd not in m:
+          m[hd] = element.val      
+      if element.left:
+          queue.append(element.left)    // node_val[element.left] = node_val[element] -1
+          element.hd = hd -1
+      if element.right:
+          queue.append(element.right)
+          element.right = hd +1
+      
+      
+ def bottom view - Just remove if hd not in m.. include the m[hd] = element.val
+                    The value gets overrided by another value in the bottom

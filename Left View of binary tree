@@ -1,5 +1,8 @@
 def left_view(root):
+  if root is None:
+      return root
   queue = [root]
+  final_list = []
   while queue:
         check = True
         count = len(queue)
@@ -8,6 +11,7 @@ def left_view(root):
             root = queue.pop(0)
             if check:
                 print(root.val)
+                final_list.append(root.val)
                 check= False
             if root.left:
                   queue.append(root.left)

@@ -1,0 +1,37 @@
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if root is None:
+            return root
+        current = root  
+        stack = [] # initialize stack 
+        done = 0 
+        lis = []
+        while True: 
+            if current is not None: 
+                stack.append(current) 
+                current = current.left  
+            elif(stack): 
+                current = stack.pop() 
+                lis.append(current.val) 
+                current = current.right 
+            else: 
+                break
+        return lis
+        
+ class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        if root is None:
+            return root
+        lis,s = [],[]
+        cur = root
+        while True:
+            if cur:
+                s.append(cur)
+                cur = cur.left
+            elif s:
+                cur = s.pop()
+                lis.append(cur.val)
+                cur = cur.right
+            else:
+                break
+        return lis

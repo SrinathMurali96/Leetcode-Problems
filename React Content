@@ -1,0 +1,4 @@
+1. React is a JS library for constructing UI
+2. It has a vitual DOM where all the changes are implemented first ie. it construct a new HTML tree. It also stores the previous tree and compare it with the new tree and writes
+difference to the Browser DOM. This makes React to make the changes in the browser without reloading it.
+3. React is descriptive. We tell / describe what we want. It performs the "How" part

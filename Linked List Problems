@@ -4,7 +4,7 @@
 4. Swap nodes in Pair - Use first and second ptr , recursion
 5. Middle element of LL - Use slow and fast ptr
 6. Clone a LL - use extra dict, if present return visited[head] , helper(next), helper(random) 
-7. Delete a node in LL (Both from first and last)
+7. Delete a node in LL (Both from first and last) & Leetcode - 237 
 8. Nth node from last (In single traversal)
 9. Merge two sorted linked list
 10. Palindrome or not - Use first and sec ptr, add elements upto middle in stack, then check equality
